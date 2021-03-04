@@ -16,10 +16,14 @@
    5. Connect your Heroku App to your Github repo
    6. Enable Automatic Deploys
    7. Setup Environment Variables
-      1. Go to the settings tab
+      1. Go to the Settings tab
       2. Click "reveal config vars"
       3. Add DISCORD_TOKEN from `.env`
       4. Add DEPLOY_ENVIRONMENT with the value `"production"`
+   8. Setup worker dyno
+      1. Go to the Resources tab
+      2. Enable "worker" dyno
+      3. Disable "web" dyno
 3. Commit your code and any changes to github
 4. Your bot is now live
 

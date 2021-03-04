@@ -19,7 +19,9 @@ const app = new Client();
 app.on("message", (msg) => {
   if (msg.author.bot) return;
   if (msg.content.startsWith("!ping")) {
+    console.info(`[in][${msg.author.username}] ${msg.content}`);
     msg.channel.send("Pong!");
+    console.info(`[out][${msg.guild?.me?.user.username}] ${msg.content}`);
     deleteMessageIfAble(msg);
   }
 });
