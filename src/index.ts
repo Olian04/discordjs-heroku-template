@@ -11,6 +11,9 @@ betterLogging(console, {
   color: Theme.dark,
 });
 
+// Enable console.debug logs
+console.logLevel = process.env.DEPLOY_ENVIRONMENT === "development" ? 4 : 3;
+
 const app = new Client();
 
 app.on("message", (msg) => {
@@ -21,7 +24,6 @@ app.on("message", (msg) => {
   }
 });
 
-console.log(process.env.DISCORD_TOKEN);
 app
   .login(process.env.DISCORD_TOKEN)
   .then(() => console.info("Login successful!"))
