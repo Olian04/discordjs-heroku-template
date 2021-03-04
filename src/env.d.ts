@@ -9,7 +9,7 @@ declare namespace NodeJS {
 
     /**
      * The deployment environment is either "development" or "production".
-     * This controls log levels, debug features, as well as the database instance that will be used.
+     * This can be used to control log levels, debug features, as well as the database instance that will be used.
      */
     DEPLOY_ENVIRONMENT: "development" | "production";
   }
