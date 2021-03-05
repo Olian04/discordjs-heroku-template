@@ -48,4 +48,4 @@ DEPLOY_ENVIRONMENT: "development" | "production";
 
 ## Invite bot
 
-`https://discord.com/oauth2/authorize?client_id=<YOUR_CLIENT_ID>&scope=bot`
+`https://discord.com/oauth2/authorize?client_id=<APPLICATION_CLIENT_ID>&scope=bot`
