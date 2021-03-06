@@ -16,12 +16,12 @@ console.logLevel = process.env.DEPLOY_ENVIRONMENT === "development" ? 4 : 3;
 
 const app = new Client();
 
-app.on("message", (msg) => {
+app.on("message", async (msg) => {
   if (msg.author.bot) return;
   if (msg.content.startsWith("!ping")) {
     console.info(`[in][${msg.author.username}] ${msg.content}`);
-    msg.channel.send("Pong!");
-    console.info(`[out][${msg.guild?.me?.user.username}] ${msg.content}`);
+    const responseMsg = await msg.channel.send("Pong!");
+    console.info(`[out][${msg.guild?.me?.user.username}] ${responseMsg.content}`);
     deleteMessageIfAble(msg);
   }
 });
