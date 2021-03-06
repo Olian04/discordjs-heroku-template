@@ -1,13 +1,26 @@
 # discordjs-heroku-template
 
-1. Setup Discordjs
-   1. Create a Discord Account
-   2. Create a Discord Application
+## Setup Development Environment
+
+1. Setup Discord Dev Application
+   1. Create a Discord Account if you dont have one.
+   2. Create a new Discord Application
       1. <https://discord.com/developers/applications>
-   3. Setup Environment Variables
-      1. Create a `.env` file from `.env.template`
-      2. Fill in your DISCORD_TOKEN (can be found in the discord developer portal)
-   4. Invite bot
+   3. Setup Environment Variables in your local repository
+      1. Copy `.env.template` and name the copy just `.env`
+      2. Open `.env` and fill in the DISCORD_TOKEN of your Discord Dev Application (can be found in the discord developer portal)
+   3. Create a discord server for testing your bot during development
+   4. Invite bot the bot to the test server
+2. Install dependencies by calling `npm install` in your terminal
+3. Start bot by caling `npm start`
+4. Test the bot in your test server by writing `!ping`, the bot should respond with `!pong`.
+
+## Setup Production Environment
+
+1. Setup Discord Prod Application
+   1. Create a Discord Account if you dont have one.
+   2. Create a new Discord Application
+      1. <https://discord.com/developers/applications>
 2. Setup Heroku
    1. Create Heroku account
    2. Connect your github account to your heroku account
@@ -18,17 +31,16 @@
    7. Setup Environment Variables
       1. Go to the Settings tab
       2. Click "reveal config vars"
-      3. Add DISCORD_TOKEN from `.env`
-      4. Add DEPLOY_ENVIRONMENT with the value `"production"`
+      3. Add the key DISCORD_TOKEN with the value being the Token for the Production Application.
+         1. The token can be found in the discord developer portal.
+      5. Add the kay DEPLOY_ENVIRONMENT with the value `"production"`
    8. Setup worker dyno
-      1. Go to the Resources tab
-      2. Enable "worker" dyno
-      3. Disable "web" dyno
+      1. Go to the Overview tab
+      2. Click "Configure Dynos"
+      3. Enable "worker" dyno
+      4. Disable "web" dyno
 3. Commit your code and any changes to github
-4. Your bot is now live
-
-Note: It is recommended to have 2 different Discord Applications, one for Production and one for Development.
-That way you can develop your bot further without needing to take down the production bot while you develop.
+4. Your bot is now live and can be invited to any server
 
 ## Env
 
